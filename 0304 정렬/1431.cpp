@@ -7,7 +7,7 @@ using namespace std;
 int str_sum(string s) {
     int sum = 0;
     for(int i=0; i<s.length(); i++) {
-        if ('0' <= s[i] && s[i] <='9') {
+        if (isdigit(s[i])) {
             sum += s[i] - '0';
         }
     }
@@ -42,4 +42,3 @@ int main() {
         cout << arr[i] << '\n';
     }
 }
-
