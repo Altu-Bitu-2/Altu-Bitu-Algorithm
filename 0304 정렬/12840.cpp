@@ -1,9 +1,13 @@
 #include <iostream>
-#define day 86400;
 
 using namespace std;
 
+const int DAY = 86400;
+const int HOUR = 3600;
+const int MIN = 60;
+
 int main() {
+
     ios::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
@@ -12,13 +16,13 @@ int main() {
     cin >> h >> m >> s;
     cin>> q;
 
-    sec = 3600*h + 60*m + s;
+    sec = HOUR*h + MIN*m + s;
 
     for(int i=0; i<q; i++) {
         cin >> t;
         if(t == 1) {
             cin >> c;
-            sec = (sec+c)%day;
+            sec = (sec+c)%DAY;
         }
         else if(t == 2) {
             cin >> c;
@@ -28,9 +32,9 @@ int main() {
             while(sec<0) {
                 sec+=day;
             }
-            h = sec/3600%24;
-            m = sec%3600/60;
-            s = sec%60;
+            h = sec/HOUR%24;
+            m = sec%HOUR/MIN;
+            s = sec%MIN;
             cout << h << " " << m << " " << s << '\n';
         }
     }
