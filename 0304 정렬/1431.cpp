@@ -1,12 +1,18 @@
-//
-// Created by 82109 on 2022-03-09.
-//
-
 #include <iostream>
 #include <vector>
 #include <algorithm>
 
 using namespace std;
+
+int str_sum(string s) {
+    int sum = 0;
+    for(int i=0; i<s.length(); i++) {
+        if ('0' <= s[i] && s[i] <='9') {
+            sum += s[i] - '0';
+        }
+    }
+    return sum;
+}
 
 bool cmp(string a, string b) {
     int sum_a = 0;
@@ -14,14 +20,10 @@ bool cmp(string a, string b) {
     if (a.length() != b.length()) {
         return a.length() < b.length();
     }
-    for (int i = 0; i < a.length(); i++) {
-        if ('0' <= a[i] && a[i] <='9') {
-            sum_a += a[i] - '0';
-        }
-        if ('0' <= b[i] && b[i] <='9') {
-            sum_b += b[i] - '0';
-        }
-    }
+
+    sum_a = str_sum(a);
+    sum_b = str_sum(b);
+
     if (sum_a != sum_b) {
         return sum_a < sum_b;
     }
