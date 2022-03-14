@@ -25,11 +25,7 @@ int main() {
         string word;
         cin >> word;
         if( word.length() >= M ) {
-            if(word_list.find(word)==word_list.end()) {
-                word_list[word] = 1;
-            } else {
-                word_list[word] += 1;
-            }
+            word_list[word]++;
         }
     }
     vector<tw> vec(word_list.begin(), word_list.end());
