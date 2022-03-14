@@ -1,9 +1,9 @@
 #include <iostream>
-#include <set>
+#include <unordered_set>
 
 using namespace std;
 
-void find_num(set<int> &v, int M) {
+void find_num(unordered_set<int> &v, int M) {
     int input;
     while(M--) {
         cin >> input;
@@ -23,8 +23,8 @@ int main() {
     int T, N, M, input;
     cin >> T;
     while(T--) {
-        // 상대적으로 삽입 삭제가 빠른 set을 사용해줌.
-        set<int> note1;
+        // 상대적으로 삽입 삭제가 빠른 unordered_set을 사용해줌.
+        unordered_set<int> note1;
         cin >> N;
         for (int i = 0; i < N; i++) {
             cin >> input;
