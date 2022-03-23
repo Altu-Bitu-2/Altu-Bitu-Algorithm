@@ -1,11 +1,13 @@
 #include <iostream>
+#include <cstring>
 
 using namespace std;
 
 #define MAX 1000000
-bool is_prime[MAX+1] = {true};
+bool is_prime[MAX+1];
 
 void find_prime() {
+    memset(is_prime, 0, sizeof(is_prime));
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i*i <= MAX; i++) {
         if (is_prime[i]) {
@@ -23,6 +25,7 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     int n;
+    memset(is_prime, 0, MAX*sizeof(bool));
     find_prime();
     while(true) {
         cin >> n;
