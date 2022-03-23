@@ -10,6 +10,7 @@ int main() {
    vector<int> answer;
    if(num1.length() < num2.length()) {
        swap(num1, num2);
+      // num1에 길이가 긴 수를 저장해줌.
    }
    for(int i=0; i<num1.length(); i++) {
        arr1[i+1] = num1[i] - '0';
