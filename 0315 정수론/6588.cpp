@@ -7,7 +7,6 @@ using namespace std;
 bool is_prime[MAX+1];
 
 void find_prime() {
-    memset(is_prime, 0, sizeof(is_prime));
     is_prime[0] = is_prime[1] = false;
     for (int i = 2; i*i <= MAX; i++) {
         if (is_prime[i]) {
@@ -25,7 +24,7 @@ int main() {
     cin.tie(NULL);
     cout.tie(NULL);
     int n;
-    memset(is_prime, 0, MAX*sizeof(bool));
+    memset(is_prime, 1, sizeof(is_prime));
     find_prime();
     while(true) {
         cin >> n;
