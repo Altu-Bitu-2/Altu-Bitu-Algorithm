@@ -1,6 +1,7 @@
 #include <iostream>
 
 using namespace std;
+#define mod 10007
 
 int main()
 {
@@ -20,7 +21,7 @@ int main()
             }
 
             dp[i][j] = (dp[i - 1][j] + dp[i][j - 1]);
-            dp[i][j] %= 1007;
+            dp[i][j] %= mod;
         }
     }
 
@@ -28,7 +29,7 @@ int main()
     for (int i = 0; i < 10; i++)
         result = (result + dp[n][i]);
 
-    cout << result % 1007;
+    cout << result % mod;
 
     return 0;
 }
