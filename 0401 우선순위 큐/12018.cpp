@@ -7,7 +7,7 @@ using namespace std;
 int main(void)
 {
 	int n, m, p, l, cnt = 0;
-  vector<int> pt;
+  	vector<int> pt;
     
 	cin >> n >> m;
 
